@@ -1,0 +1,152 @@
+:root {
+  --text-primary: hsl(238, 29%, 16%);
+  --text-secondary: hsl(14, 88%, 65%);
+  --divider: hsl(240, 5%, 91%);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.card {
+  margin-top: 8rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #fff;
+  background-image: url(/images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: 14rem;
+  border-radius: 1.5rem;
+  min-height: 40rem;
+}
+
+.image-desktop {
+  display: none;
+  overflow: hidden;
+}
+
+.box {
+  display: none;
+}
+
+.image-mobile {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: -6.4rem;
+  width: 14rem;
+}
+
+.text {
+  padding-top: 6rem;
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--divider);
+  padding-bottom: 1rem;
+}
+
+.accordion__content {
+  padding-top: 0.5rem;
+  line-height: 1.5;
+  color: hsl(240, 6%, 50%);
+}
+
+.accordion__title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  background: transparent;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  text-align: left;
+  padding-top: 1rem;
+}
+
+.accordion__title::after {
+  content: "";
+  background-image: url(/images/icon-arrow-down.svg);
+  display: block;
+  width: 10px;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    text-align: left;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    min-height: 35rem;
+    margin: 5rem auto;
+    padding: 3rem;
+    padding-left: 0;
+    padding-bottom: 1rem;
+    background-image: url(/images/bg-pattern-desktop.svg);
+    background-size: 50rem;
+    background-position: -493% 70%;
+    max-width: 900px;
+  }
+
+  .image-desktop {
+    display: block;
+    width: 45rem;
+    padding-right: 4rem;
+    transform: translateX(-4rem);
+  }
+
+  .image-mobile {
+    display: none;
+  }
+
+  .image {
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+  }
+
+  .box {
+    display: block;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%) translateY(-50%);
+    top: 59%;
+    z-index: 1;
+    width: 10rem;
+  }
+
+  .text {
+    padding-top: 0;
+  }
+}
